@@ -69,11 +69,11 @@
 			<artifactId>spring-security-core</artifactId>
 			<version>6.5.3</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.flywaydb/flyway-core -->
 		<dependency>
 			<groupId>org.flywaydb</groupId>
-			<artifactId>flyway-core</artifactId>
-			<version>11.11.1</version>
+			<artifactId>flyway-database-postgresql</artifactId>
+			<version>11.11.2</version>
+			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
 

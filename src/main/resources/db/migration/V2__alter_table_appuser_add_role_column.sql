@@ -1,0 +1,3 @@
+CREATE TYPE user_role AS ENUM('USER', 'ADMIN', 'MANAGER', 'READ_ONLY');
+
+ALTER TABLE app_user ADD COLUMN role user_role DEFAULT 'USER';

@@ -1,5 +1,6 @@
 package com.ezequiel.controle_financeiro.model;
 
+import com.ezequiel.controle_financeiro.model.enums.AppUserRole;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -26,11 +27,17 @@ public class AppUser {
     @Column(nullable = false)
     private String passwordHash;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role")
+    private AppUserRole userRole;
+
     @Column(nullable = false, updatable = false)
     private Instant createdAt;
 
     @PrePersist
     private void prePersist() {
         this.createdAt = Instant.now();
+
+        if (this.userRole == null) this.userRole = AppUserRole.USER;
     }
 }

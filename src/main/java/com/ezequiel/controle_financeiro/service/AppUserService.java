@@ -16,7 +16,7 @@ public class AppUserService {
 
     public AppUserResponseDTO findById(UUID id) {
         AppUser user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("Error. User not found."));
-        return new AppUserResponseDTO(user.getId(), user.getName(), user.getEmail(), user.getCreatedAt());
+        return new AppUserResponseDTO(user.getId(), user.getName(), user.getEmail(), user.getUserRole(), user.getCreatedAt());
     }
 
 }

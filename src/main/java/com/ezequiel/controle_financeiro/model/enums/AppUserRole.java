@@ -4,9 +4,7 @@ import lombok.Getter;
 
 public enum AppUserRole {
     ADMIN("admin"),
-    USER("user"),
-    MANAGER("manager"),
-    READ_ONLY("read_only");
+    USER("user");
 
     @Getter
     private String role;

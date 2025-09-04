@@ -1,4 +1,6 @@
 package com.ezequiel.controle_financeiro.dto;
 
-public record AppUserRequestDTO(String name, String email, String password) {
+import com.ezequiel.controle_financeiro.model.enums.AppUserRole;
+
+public record AppUserRequestDTO(String name, String email, String password, AppUserRole userRole) {
 }

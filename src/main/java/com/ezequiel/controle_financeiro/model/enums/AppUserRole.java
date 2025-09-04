@@ -3,8 +3,8 @@ package com.ezequiel.controle_financeiro.model.enums;
 import lombok.Getter;
 
 public enum AppUserRole {
-    ADMIN("admin"),
-    USER("user");
+    ADMIN("ADMIN"),
+    USER("USER");
 
     @Getter
     private String role;

@@ -3,6 +3,8 @@ package com.ezequiel.controle_financeiro.model;
 import com.ezequiel.controle_financeiro.model.enums.AppUserRole;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.JdbcType;
+import org.hibernate.dialect.PostgreSQLEnumJdbcType;
 
 import java.time.Instant;
 import java.util.UUID;
@@ -28,7 +30,8 @@ public class AppUser {
     private String passwordHash;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "role")
+    @JdbcType(PostgreSQLEnumJdbcType.class)
+    @Column(name = "role", columnDefinition = "user_role")
     private AppUserRole userRole;
 
     @Column(nullable = false, updatable = false)
